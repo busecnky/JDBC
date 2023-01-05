@@ -1,0 +1,107 @@
+package com.ogutcenali;
+import javax.swing.*;  
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
+
+public class UsersMain {
+
+	private JFrame frmKullancGiriEkran;
+	private JTextField tf_kullanici_adi;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UsersMain window = new UsersMain();
+					window.frmKullancGiriEkran.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public UsersMain() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmKullancGiriEkran = new JFrame();
+		frmKullancGiriEkran.setForeground(new Color(0, 0, 0));
+		frmKullancGiriEkran.setFont(new Font("Dialog", Font.BOLD, 16));
+		frmKullancGiriEkran.setTitle("Kullanıcı Giriş Ekranı");
+		frmKullancGiriEkran.setBounds(100, 100, 369, 303);
+		frmKullancGiriEkran.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmKullancGiriEkran.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Kullanıcı Adı=");
+		lblNewLabel.setBounds(46, 91, 91, 38);
+		frmKullancGiriEkran.getContentPane().add(lblNewLabel);
+		
+		tf_kullanici_adi = new JTextField();
+		tf_kullanici_adi.setBounds(123, 100, 116, 20);
+		frmKullancGiriEkran.getContentPane().add(tf_kullanici_adi);
+		tf_kullanici_adi.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel("Şifre =");
+		lblNewLabel_1.setBounds(46, 140, 63, 14);
+		frmKullancGiriEkran.getContentPane().add(lblNewLabel_1);
+		
+		 JButton btn_giris = new JButton("Giriş");
+		btn_giris.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			
+			String kullaniciadi = tf_kullanici_adi.getText();
+			String password = new String(passwordField.getPassword());
+			String message=" ";
+			
+			if(kullaniciadi.equals("aliogutcen") && password.equals("12345")) {
+				message = kullaniciadi+ " Hoşgeldiniz.";
+			}
+			
+			else if(!kullaniciadi.equals("aliogutcen") && password.equals("12345")) {
+				message = "Kullanıcı Adı Hatalı";
+			}
+			
+			else if(kullaniciadi.equals("aliogutcen") && !password.equals("12345")) {
+				message = "Şifreniz Hatalı";
+			}
+			else {
+				message= "Kullanıcı adı ve şifreniz hatalı.";
+			}
+				JOptionPane.showMessageDialog(null, message);
+				
+			}
+		
+		}
+
+				);
+		btn_giris.setBounds(123, 190, 116, 23);
+		frmKullancGiriEkran.getContentPane().add(btn_giris);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(123, 137, 116, 20);
+		frmKullancGiriEkran.getContentPane().add(passwordField);
+	}
+}
