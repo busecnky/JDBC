@@ -19,17 +19,17 @@ public class ShapeFactory extends AbstractFactory{
 		
 	}
 
-			
-			
-	
-	
-	
-	
 	@Override
-	public IColor getColor(String color) {
+	IColor getColor(String color) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+			
+			
+	
+	
+	
 
 
 

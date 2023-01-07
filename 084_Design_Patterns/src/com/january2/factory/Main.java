@@ -9,6 +9,12 @@ public class Main {
 		enemyFactory.createEnemy(IEnemy.ARCHER).attack();
 		enemyFactory.createEnemy(IEnemy.CAVALRY).attack();
 		enemyFactory.createEnemy(IEnemy.INFANTRY).attack();
+
+	
+		//enemyFactory.createEnemy(null).attack();
+		//enemyFactory.createEnemy(IEnemy.empty).attack();
+		
+		
 		
 		
 		EnemyFactorySingleton.enemyFactory().createEnemy(IEnemy.ARCHER).attack();

@@ -14,6 +14,8 @@ public class Echoer extends Thread {
 	public Echoer(Socket socket, int id) {
 		this.socket = socket;
 		this.threadID = id;
+		System.out.println("Client tarafının port numarası: " + this.socket.getPort());  
+		System.out.println("Server tarafının port numarası: " + this.socket.getLocalPort());  
 	}
 	
 	

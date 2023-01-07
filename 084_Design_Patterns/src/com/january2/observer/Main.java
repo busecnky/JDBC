@@ -14,7 +14,7 @@ public class Main {
 		p.attach(s1);
 		p.attach(s2);
 		
-		p.notifUpdate(new Message("Sıcaklık 40 C derece")); //s1 ve s2nin bu update i alması gerekiyor
+		p.notifUpdate(new Message("Sıcaklık 50 C derece")); //s1 ve s2nin bu update i alması gerekiyor
 		
 		p.detach(s2);
 		p.notifUpdate(new Message("Sıcaklık 35 C derece"));

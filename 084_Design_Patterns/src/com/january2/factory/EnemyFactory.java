@@ -6,7 +6,9 @@ public class EnemyFactory {
 	public IEnemy createEnemy(String enemyType) {
 		
 		if(enemyType == null || enemyType.isEmpty()) {
+			System.out.println("NULL DÖNDÜ");
 			return null;
+		
 		}
 		
 		switch (enemyType) {
